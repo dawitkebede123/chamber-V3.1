@@ -29,14 +29,19 @@ class _LeftMenuState extends State<LeftMenu> {
   final List<Map<String,dynamic>> contact =[
        {
       "title":"For Business Related Enquiry",
-    "content": "0115519817 \n 0911376543 \n addischamber@gmail.com"
-
+      "tel": "0115519817",
+      "mobile":"0911376543",
+      "email":"addischamber@gmail.com",
+       "website":"www"
 
      },
    
     {
       "title":"For Financial Almanac Related Enquiry",
-    "content": "   +251 11 515 5221 \n +251 91 196 4500 \n  +251 93 155 9829 \n flijalem@yahoo.com \n lemlem.aaccsa@gmail.com"
+      "tel":"+251 11 515 5221",
+      "mobile":"+251 93 155 9829",
+      "email":"flijalem@yahoo.com lemlem.aaccsa@gmail.com",
+     
     },
     
 
@@ -195,7 +200,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: SizedBox(
-                    height: 300,
+                    height: 400,
                     child: ExpandedPanel(data: contact,clickable: true,)),
                 ),
               ],

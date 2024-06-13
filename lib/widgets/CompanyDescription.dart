@@ -7,6 +7,7 @@ import 'package:chamber_of_commerce/pages/user/Almanac_Options/Fintech_Options.d
 import 'package:chamber_of_commerce/pages/user/Almanac_Options/Insurance_Options.dart';
 import 'package:chamber_of_commerce/pages/user/Almanac_Options/MicroFinance_Options.dart';
 import 'package:chamber_of_commerce/pages/user/Almanac_Options/Capital_Goods_Options.dart';
+import 'package:chamber_of_commerce/widgets/ContactTemplete.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:chamber_of_commerce/pages/user/Home.dart';
@@ -332,107 +333,102 @@ class _CompanyDescriptionState extends State<CompanyDescription> {
                       child: Container(child: Text(profile,textAlign: TextAlign.justify,style: TextStyle(fontSize: 14))),
            )
            ),
-                
-         if(tel !="")
-                       Padding(
-                         padding: const EdgeInsets.only(left: 20.0,right: 20),
-                         child: 
-                         Row(
-                           children: [
-                             InkWell( // Wrap the content in an InkWell
-                                            onTap: () {
-                                              launch('tel:$tel'); // Launch the phone dialer with the number
-                                            },
-                            child: Row(
-                               children: [
-                                  Container(
-                                   // width: 20,
-                                   // height: 20,
-                                   decoration: BoxDecoration(
+         ContactTemeplete(tel: tel,website:website,email: email,)        
+        //  if(tel !="")
+        //                Padding(
+        //                  padding: const EdgeInsets.only(left: 20.0,right: 20),
+        //                  child: 
+        //                  Row(
+        //                    children: [
+        //                      InkWell( // Wrap the content in an InkWell
+        //                                     onTap: () {
+        //                                       launch('tel:$tel'); // Launch the phone dialer with the number
+        //                                     },
+        //                     child: Row(
+        //                        children: [
+        //                           Container(
+        //                            // width: 20,
+        //                            // height: 20,
+        //                            decoration: BoxDecoration(
                          
-                             color: Color.fromARGB(255, 255, 255, 255),
+        //                      color: Color.fromARGB(255, 255, 255, 255),
                                             
-                                            borderRadius:BorderRadius.circular(999), // Set border width
+        //                                     borderRadius:BorderRadius.circular(999), // Set border width
                                             
-                                              ),
-                                   child: SvgPicture.asset('assets/images/vector1.svg',width: 10,height: 10,)),
-                                 SizedBox(width: 10,),
-                                 Text(tel,softWrap: true,overflow: TextOverflow.ellipsis,),
-                               ],
-                             ),),
-                           ],
-                         ),
-                       ),
-                       const SizedBox(height: 5,),
+        //                                       ),
+        //                            child: SvgPicture.asset('assets/images/vector1.svg',width: 10,height: 10,)),
+        //                          SizedBox(width: 10,),
+        //                          Text(tel,softWrap: true,overflow: TextOverflow.ellipsis,),
+        //                        ],
+        //                      ),),
+        //                    ],
+        //                  ),
+        //                ),
+        //                const SizedBox(height: 5,),
                       
-                        if(website !=null)
-                       Padding(
-                         padding: const EdgeInsets.only(left: 20.0,right: 20),
-                         child: Row(
-                         children: [
-                          InkWell( // Wrap the content in an InkWell
-                             onTap: () {
-                               // ignore: deprecated_member_use
-                               launch(website); // Launch the URL in a web browser
-                                            },
-                           child:Row(
-                           children: [
-                              Container(
-                               // width: 20,
-                               // height: 20,
-                               decoration: BoxDecoration(
+        //                 if(website !=null)
+        //                Padding(
+        //                  padding: const EdgeInsets.only(left: 20.0,right: 20),
+        //                  child: Row(
+        //                  children: [
+        //                   InkWell( // Wrap the content in an InkWell
+        //                      onTap: () {
+        //                        // ignore: deprecated_member_use
+        //                        launch(website); // Launch the URL in a web browser
+        //                                     },
+        //                    child:Row(
+        //                    children: [
+        //                       Container(
+        //                        // width: 20,
+        //                        // height: 20,
+        //                        decoration: BoxDecoration(
                          
-                             color: Color.fromARGB(255, 255, 255, 255),
+        //                      color: Color.fromARGB(255, 255, 255, 255),
                                             
-                                            borderRadius:BorderRadius.circular(999), // Set border width
+        //                                     borderRadius:BorderRadius.circular(999), // Set border width
                                             
-                                              ),
-                               child: SvgPicture.asset('assets/images/vector.svg',width: 10,height: 10,)),
-                             SizedBox(width: 10,),
-                             Text(website,softWrap: true,overflow: TextOverflow.ellipsis,),
-                           ],
-                         )),],),
-                       ),
-                        SizedBox(height: 5,),
+        //                                       ),
+        //                        child: SvgPicture.asset('assets/images/vector.svg',width: 10,height: 10,)),
+        //                      SizedBox(width: 10,),
+        //                      Text(website,softWrap: true,overflow: TextOverflow.ellipsis,),
+        //                    ],
+        //                  )),],),
+        //                ),
+        //                 SizedBox(height: 5,),
                       
                        
-                         if(email !="")
+        //                  if(email !="")
                       
-                       Padding(
-                         padding: const EdgeInsets.only(left: 20.0,right: 20),
-                         child: Row(
-                                              children: [
-                         InkWell( // Wrap the content in an InkWell
-                                            onTap: () {
-                                              launch('mailto:$email'); // Launch email app with recipient
-                                            },
-                                            child: Row(
-                           children: [
-                              Container(
-                               // width: 20,
-                               // height: 20,
-                               decoration: BoxDecoration(
+        //                Padding(
+        //                  padding: const EdgeInsets.only(left: 20.0,right: 20),
+        //                  child: Row(
+        //                                       children: [
+        //                  InkWell( // Wrap the content in an InkWell
+        //                                     onTap: () {
+        //                                       launch('mailto:$email'); // Launch email app with recipient
+        //                                     },
+        //                                     child: Row(
+        //                    children: [
+        //                       Container(
+        //                        // width: 20,
+        //                        // height: 20,
+        //                        decoration: BoxDecoration(
                          
-                             color: Color.fromARGB(255, 255, 255, 255),
+        //                      color: Color.fromARGB(255, 255, 255, 255),
                                             
-                                            borderRadius:BorderRadius.circular(999), // Set border width
+        //                                     borderRadius:BorderRadius.circular(999), // Set border width
                                             
-                                              ),
-                               child: SvgPicture.asset('assets/images/vector2.svg',width: 10,height: 10,)),
-                              SizedBox(width: 10,),
-                             Text(email,softWrap: true,overflow: TextOverflow.ellipsis,),
-                           ],
-                         ),)]),
-                       ),
-                 SizedBox(height: 10,),
-                  IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: () async {
-              // Replace with your actual sharing logic
-              final text = ' CompanyDescription Name: $name\n Sector: $sector\n Sub-sector: $sub_sector Sub Phone: $tel\n Email: $email\n Website: $website\n ';
-              await Share.share(text);
-            },
-          ),
+        //                                       ),
+        //                        child: SvgPicture.asset('assets/images/vector2.svg',width: 10,height: 10,)),
+        //                       SizedBox(width: 10,),
+        //                      Text(email,softWrap: true,overflow: TextOverflow.ellipsis,),
+        //                    ],
+                        //  ),
+                        //  )
+                        //  ]),
+                      //  ),
+                //  SizedBox(height: 10,),
+                
        ]), 
         
         //  bottomNavigationBar:const CustomeButtomNavBar(index: 3,),

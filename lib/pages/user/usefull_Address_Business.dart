@@ -7,6 +7,7 @@ import 'package:chamber_of_commerce/pages/user/Company.dart';
 import 'package:chamber_of_commerce/pages/user/Company_detail.dart';
 import 'package:chamber_of_commerce/pages/user/Home.dart';
 import 'package:chamber_of_commerce/widgets/BottomNavBar.dart';
+import 'package:chamber_of_commerce/widgets/ContactTemplete.dart';
 import 'package:chamber_of_commerce/widgets/CustomBottomNavBar.dart';
 import 'package:chamber_of_commerce/widgets/GridScreen.dart';
 import 'package:chamber_of_commerce/widgets/GridSingle.dart';
@@ -238,7 +239,7 @@ class _UseFullAddressBusinessState extends State<UseFullAddressBusiness> {
            final businessData = data[index];
            final name = businessData['DETAIL CONTACT COMPANY'];
            final email = businessData['E-MAIL'];
-           final tel = businessData['TEL_UPDATE'];
+           final String tel = businessData['TEL_UPDATE'].toString();
            
          
            // Extract business information based on your data structure
@@ -276,6 +277,12 @@ class _UseFullAddressBusinessState extends State<UseFullAddressBusiness> {
                            Expanded(child: Text(name,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16), softWrap: true,overflow: TextOverflow.ellipsis,textAlign: TextAlign.left)),
                          ],
                        ),
+                       if(tel!='' && email!='')
+                        ContactTemeplete(tel: tel,email: email,),
+                       if(tel!='')
+                            ContactTemeplete(tel: tel,),
+                       if(email!='')
+                              ContactTemeplete(email: email,),     
                        // Text(name, style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 16),softWrap: true,overflow: TextOverflow.ellipsis,textAlign: TextAlign.center,),
                        //  Row(
                          
@@ -303,87 +310,87 @@ class _UseFullAddressBusinessState extends State<UseFullAddressBusiness> {
                            
                        //   ],
                        // ),
-                       if('$tel' !="")
-                       Row(
-                         children: [
-                           InkWell( // Wrap the content in an InkWell
-                   onTap: () {
-                     launch('tel:$tel'); // Launch the phone dialer with the number
-                   },
-                          child: Row(
-                             children: [
-                                Container(
-                                 // width: 20,
-                                 // height: 20,
-                                 decoration: BoxDecoration(
+                  //      if('$tel' !="")
+                  //      Row(
+                  //        children: [
+                  //          InkWell( // Wrap the content in an InkWell
+                  //  onTap: () {
+                  //    launch('tel:$tel'); // Launch the phone dialer with the number
+                  //  },
+                  //         child: Row(
+                  //            children: [
+                  //               Container(
+                  //                // width: 20,
+                  //                // height: 20,
+                  //                decoration: BoxDecoration(
                        
-                           color: Color.fromARGB(255, 255, 255, 255),
+                  //          color: Color.fromARGB(255, 255, 255, 255),
                    
-                   borderRadius:BorderRadius.circular(999), // Set border width
+                  //  borderRadius:BorderRadius.circular(999), // Set border width
                    
-                     ),
-                                 child: SvgPicture.asset('assets/images/vector1.svg',width: 10,height: 10,)),
-                               SizedBox(width: 10,),
-                               Text('$tel',softWrap: true,overflow: TextOverflow.ellipsis,),
-                             ],
-                           ),),
-                         ],
-                       ),
-                       SizedBox(height: 5,),
+                  //    ),
+                  //                child: SvgPicture.asset('assets/images/vector1.svg',width: 10,height: 10,)),
+                  //              SizedBox(width: 10,),
+                  //              Text('$tel',softWrap: true,overflow: TextOverflow.ellipsis,),
+                  //            ],
+                  //          ),),
+                  //        ],
+                  //      ),
+                  //      SizedBox(height: 5,),
                       
                      
          
-                        SizedBox(height: 5,),
-                         if(email !="")
-                       Row(
-                     children: [
-                       InkWell( // Wrap the content in an InkWell
-                   onTap: () {
-                     launch('mailto:$email'); // Launch email app with recipient
-                   },
-                   child: Row(
-                         children: [
-                            Container(
-                             // width: 20,
-                             // height: 20,
-                             decoration: BoxDecoration(
+                  //       SizedBox(height: 5,),
+                  //        if(email !="")
+                  //      Row(
+                  //    children: [
+                  //      InkWell( // Wrap the content in an InkWell
+                  //  onTap: () {
+                  //    launch('mailto:$email'); // Launch email app with recipient
+                  //  },
+                  //  child: Row(
+                  //        children: [
+                  //           Container(
+                  //            // width: 20,
+                  //            // height: 20,
+                  //            decoration: BoxDecoration(
                        
-                           color: Color.fromARGB(255, 255, 255, 255),
+                  //          color: Color.fromARGB(255, 255, 255, 255),
                    
-                   borderRadius:BorderRadius.circular(999), // Set border width
+                  //  borderRadius:BorderRadius.circular(999), // Set border width
                    
-                     ),
-                             child: SvgPicture.asset('assets/images/vector2.svg',width: 10,height: 10,)),
-                            SizedBox(width: 10,),
-                           Text(email,softWrap: true,overflow: TextOverflow.ellipsis,),
-                         ],
-                       ),)]),
-                       SizedBox(height: 20,),
+                  //    ),
+                  //            child: SvgPicture.asset('assets/images/vector2.svg',width: 10,height: 10,)),
+                  //           SizedBox(width: 10,),
+                  //          Text(email,softWrap: true,overflow: TextOverflow.ellipsis,),
+                  //        ],
+                  //      ),)]),
+                      //  SizedBox(height: 20,),
                    
                    
                        
-                        Row(
-                          children: [
-                           SizedBox(width: MediaQuery.of(context).size.width*0.68,),
-                            Container(
-                              decoration: BoxDecoration(
+                  //       Row(
+                  //         children: [
+                  //          SizedBox(width: MediaQuery.of(context).size.width*0.68,),
+                  //           Container(
+                  //             decoration: BoxDecoration(
                            
-                           color: Color.fromARGB(255, 255, 255, 255),
+                  //          color: Color.fromARGB(255, 255, 255, 255),
                    
-                   borderRadius:BorderRadius.circular(999), // Set border width
+                  //  borderRadius:BorderRadius.circular(999), // Set border width
                    
-                     ),
-                              child: IconButton(
-                               icon: const Icon(Icons.share),
-                               onPressed: () async {
-                                 // Replace with your actual sharing logic
-                                 final text = 'Company Name: $name\n Phone: $tel\n Email: $email\n ';
-                                 await Share.share(text);
-                               },
-                                        ),
-                            ),
-                          ],
-                        ),
+                  //    ),
+                  //             child: IconButton(
+                  //              icon: const Icon(Icons.share),
+                  //              onPressed: () async {
+                  //                // Replace with your actual sharing logic
+                  //                final text = 'Company Name: $name\n Phone: $tel\n Email: $email\n ';
+                  //                await Share.share(text);
+                  //              },
+                  //                       ),
+                  //           ),
+                  //         ],
+                  //       ),
                        // const Column(
                        //   children: [
                            

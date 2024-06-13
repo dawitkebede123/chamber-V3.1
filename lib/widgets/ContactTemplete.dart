@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactTemeplete extends StatefulWidget {
@@ -24,42 +25,145 @@ class _ContactTemepleteState extends State<ContactTemeplete> {
     return  Column(
       children: [
         //  Text('hellp'),
-        //  if(tel!='')
-              Row(children: [
-                    InkWell( // Wrap the content in an InkWell
+         if(tel!='')
+             Padding(
+               padding: const EdgeInsets.only(left: 20.0,right: 20),
+               child: Row(
+                             children: [
+                               InkWell( // Wrap the content in an InkWell
+                                              onTap: () {
+                                                launch('tel:$tel'); // Launch the phone dialer with the number
+                                              },
+                              child: Row(
+                                 children: [
+                                     Padding(
+                                       padding: const EdgeInsets.all(8.0),
+                                       child: Container(
+                                                                           // color: Colors.amber,
+                                                           decoration: BoxDecoration(
+                                                             color:Color.fromARGB(255, 0, 114, 63),
+                                                             borderRadius:BorderRadius.circular(999) ,
+                                                           ),
+                                                           child: const Padding(
+                                                             padding: EdgeInsets.all(12.0),
+                                                             child: Icon(Icons.call,color: Colors.white,size: 16 ,),
+                                                           )),
+                                     ),
+                                   SizedBox(width: 10,),
+
+                                    Container(
+                                     // width: 20,
+                                     // height: 20,
+                                     decoration: BoxDecoration(
+                           
+                               color: Color.fromARGB(255, 255, 255, 255),
+                                              
+                                              borderRadius:BorderRadius.circular(999), // Set border width
+                                              
+                                                ),
+                                child:   Text(tel,softWrap: true,overflow: TextOverflow.ellipsis,),
+                                      
+                                      ),
+                                
+                                      // SvgPicture.asset('assets/images/vector1.svg',width: 10,height: 10,),
+
+                                 ],
+                               ),),
+                             ],
+                           ),
+             ),
+         if(mobile!='')
+          Padding(
+               padding: const EdgeInsets.only(left: 20.0,right: 20),
+               child: Row(
+                             children: [
+                               InkWell( // Wrap the content in an InkWell
+                                              onTap: () {
+                                                launch('tel:$mobile'); // Launch the phone dialer with the number
+                                              },
+                              child: Row(
+                                 children: [
+                                   Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Container(
+                                      // color: Colors.amber,
+                                                         decoration: BoxDecoration(
+                                                           color:Color.fromARGB(255, 0, 114, 63),
+                                                           borderRadius:BorderRadius.circular(999) ,
+                                                         ),
+                                                         child: const Padding(
+                                                           padding: EdgeInsets.all(12.0),
+                                                           child: Icon(Icons.mobile_screen_share,color: Colors.white,size: 16 ,),
+                                                         )),
+                                   ),
+                                   SizedBox(width: 10,),
+                                   Text(mobile,softWrap: true,overflow: TextOverflow.ellipsis,),
+                                 ],
+                               ),),
+                             ],
+                           ),
+             ),
+          if(website!='')
+            Padding(
+                         padding: const EdgeInsets.only(left: 20.0,right: 20),
+                         child: Row(
+                         children: [
+                          InkWell( // Wrap the content in an InkWell
+                             onTap: () {
+                               // ignore: deprecated_member_use
+                               launch('$website'); // Launch the URL in a web browser
+                                            },
+                           child:Row(
+                           children: [
+                             Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Container(
+                                      // color: Colors.amber,
+                                                         decoration: BoxDecoration(
+                                                           color:Color.fromARGB(255, 0, 114, 63),
+                                                           borderRadius:BorderRadius.circular(999) ,
+                                                         ),
+                                                         child: const Padding(
+                                                           padding: EdgeInsets.all(12.0),
+                                                           child: Icon(Icons.web,color: Colors.white,size: 16 ,),
+                                                         )),
+                                   ),
+                             
+                             SizedBox(width: 10,),
+                             Text(website,softWrap: true,overflow: TextOverflow.ellipsis,),
+                           ],
+                         )),],),
+                       ),
+          if(email!='')
+                Padding(
+                         padding: const EdgeInsets.only(left: 20.0,right: 20),
+                         child: Row(
+                                              children: [
+                         InkWell( // Wrap the content in an InkWell
                                             onTap: () {
-                                              launch('tel:$tel'); // Launch email app with recipient
+                                              launch('mailto:$email'); // Launch email app with recipient
                                             },
                                             child: Row(
                            children: [
-                              Container(
-                               // width: 20,
-                               // height: 20,
-                               decoration: BoxDecoration(
-                         
-                             color: Color.fromARGB(255, 255, 255, 255),
-                                            
-                                            borderRadius:BorderRadius.circular(999), // Set border width
-                                            
-                                              ),
-                               child: TextButton(child: Text('Call'),onPressed: ()=>{},)),
-                                SizedBox(width: 10,),
-                             Text(email,softWrap: true,overflow: TextOverflow.ellipsis,style: TextStyle(color: Theme.of(context).colorScheme.primary),),
+                              Padding(
+                                       padding: const EdgeInsets.all(8.0),
+                                       child: Container(
+                                                                           // color: Colors.amber,
+                                                           decoration: BoxDecoration(
+                                                             color:const Color.fromARGB(255, 0, 114, 63),
+                                                             borderRadius:BorderRadius.circular(999) ,
+                                                           ),
+                                                           child: const Padding(
+                                                             padding: EdgeInsets.all(12.0),
+                                                             child: Icon(Icons.email, color: Colors.white,size: 16 ,),
+                                                           )),
+                                     ),
+                              
+                              SizedBox(width: 10,),
+                             Text(email,softWrap: true,overflow: TextOverflow.ellipsis,),
                            ],
-                         ),)
-              ],),
-         if(widget.mobile!='')
-          Row(children: [
-
-          ],),
-          if(widget.website!='')
-            Row(children: [
-
-            ],),
-          if(widget.email!='')
-               Row(children: [
-
-               ],)
+                         ),)]),
+                       ),
       ],
     );
   }

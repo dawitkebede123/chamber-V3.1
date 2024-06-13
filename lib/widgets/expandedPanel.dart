@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
   
 
+// ignore: must_be_immutable
 class ExpandedPanel extends StatefulWidget {
   final List<Map<String,dynamic>> data;
  bool clickable;
@@ -57,12 +58,13 @@ class _ExpandedPanelState extends State<ExpandedPanel> {
         
                 child: Column(
                   children: [
-                ContactTemeplete(),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
+                    ContactTemeplete(tel: item['tel'],mobile: item['mobile'],email: item['email'],)
+                // ContactTemeplete(clickable:,
+                    // Padding(
+                    //   padding: const EdgeInsets.all(16.0),
                         
-                      child: Text(item['content'],textAlign: TextAlign.justify,),
-                    ),
+                    //   child: Text(item['content'],textAlign: TextAlign.justify,),
+                    // ),
                   ],
                 )
                 
